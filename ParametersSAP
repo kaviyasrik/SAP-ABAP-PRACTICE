@@ -1,0 +1,35 @@
+*& -------------------------------------------------------------------------------------------------------------------*
+*& REPORT ZKA_PG1.*
+*& ------------------------------------------------------------------------------------------------*
+*& DEVELOPER   : KAVIYA *
+*& CREATED ON  : 03.12.2024 *
+*& TITLE       :          *
+*& REPORT NAME : REPORT ZKA_PG1. *
+*& TRANSPOORT REQUEST: *
+*& RELATED INFO:  *
+
+*&
+*&--------------------------------------------------------------------------------------------------------------------------------------*
+
+**************************************** PARAMETERS ********************************************
+
+REPORT ZKA_PG1.
+
+
+
+*PARAMETERS pnt_id TYPE N LENGTH 7.
+*PARAMETERS pnt_id1 TYPE ZPNT_ID .
+PARAMETERS pnt_id2 TYPE ZKAPNTDETAIL-PNT_ID .
+PARAMETERS PNT_NAME TYPE ZKAPNTDETAIL-PNT_NAME OBLIGATORY.
+PARAMETERS PNT_NAM TYPE ZKAPNTDETAIL-PNT_NAME DEFAULT 'KAVIYA'.
+PARAMETERS PNT_PH TYPE ZKAPNTDETAIL-PH_NUM AS LISTBOX VISIBLE LENGTH 11.
+PARAMETERS PNT_ADD TYPE ZKAPNTDETAIL-PNT_ADD MATCHCODE OBJECT AAAA.
+PARAMETERS : pl RADIOBUTTON GROUP BANK,
+             Hl RADIOBUTTON GROUP BANK,
+             Gl RADIOBUTTON GROUP BANK.
+PARAMETERS APPROVE AS CHECKBOX .
+
+
+
+
+
