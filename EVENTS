@@ -1,0 +1,156 @@
+************************TOPIC 3 ************************
+****************** EVENTS *****************************
+
+
+
+
+
+
+
+*
+
+REPORT ZKA_PG3.
+TABLES ZKAPNTDETAIL.
+PARAMETERS: PID TYPE ZKAPNTDETAIL-PNT_ID,
+            PNAME TYPE ZKAPNTDETAIL-PNT_NAME OBLIGATORY,
+            PBILL TYPE ZKABILLDETAIL-PNTBILL_AMT ,
+            pbank type c LENGTH 10 as LISTBOX visible length 5,
+            AGREE AS CHECKBOX.
+
+
+*********************parameters with selection-screen******************************
+**************1.parameter normal with s-s************************
+*AT SELECTION-SCREEN.
+*  IF PID IS INITIAL.
+*    MESSAGE 'THE ID IS NOT ENTERED' TYPE 'E'.
+*  ELSE.
+*    MESSAGE 'THE ID IS ENTERED' TYPE 'I'.
+*  ENDIF.
+
+
+
+
+
+
+*****************2.paramter obligatory with s-s
+                          "   NO NEED OF IF CONDITION BCZ ALREADY IT WILL SHOW ERROR MSG IF THAT FIELD IS NOT ENTERD********************
+
+
+
+
+
+
+****************3.PARAMETER DEFAULT WITH S-S
+                                " SEE whats the purpose of writing initial in default how ever default box filled with enterd value
+                                "so there is no use of writing initial and not initial i.e, selection-screen    ***************************
+*AT SELECTION-SCREEN.
+*  IF PBILL IS INITIAL.
+*     MESSAGE 'THE AMT IS NOT ENTERED' TYPE 'E'.
+*  ELSE.
+*    MESSAGE 'THE AMT IS ENTERED' TYPE 'I'.
+*
+*  ENDIF.
+
+
+
+
+*****************4.paramter as checkbox with s-s***********************
+
+*  IF AGREE = 'X'.
+*    MESSAGE 'AGREED ' TYPE 'I'.
+*  ELSE.
+*    MESSAGE 'NOT AGREED' TYPE 'E'.
+*  ENDIF.
+
+
+
+
+********************5.parameter as listbox with visible length with s-s *****************************
+
+
+*IF pbank is INITIAL.
+*  MESSAGE 'ITS INITIAL' type 'I'.
+*ELSE.
+*    MESSAGE 'ITS INITIAL' type 'I'.
+*
+*ENDIF.
+
+
+********************7.parameter matchcode object with s-s*********************************************
+
+
+
+
+
+
+
+
+
+*********************6.PARAMETER RADIOBUTTON GROUP WITH S-S**********************
+*DATA : NERV TYPE C.
+*PARAMETERS: OPTIC RADIOBUTTON GROUP NERV,
+*           RADIAL RADIOBUTTON GROUP NERV,
+*           TIBIAL RADIOBUTTON GROUP NERV,
+*           THORARI RADIOBUTTON GROUP NERV,
+*           SACRAL RADIOBUTTON GROUP NERV.
+*
+*IF NERV = 'X'.
+*  MESSAGE 'ITS NOT INITIAL' type 'I'.
+*ELSE.
+*  MESSAGE 'ITS INITIAL' type 'I'.
+*
+*
+*ENDIF.
+*
+*
+
+
+
+
+
+************************8.PARAMETER LOWERCASE WITH S-S********************************
+
+
+
+
+
+
+
+
+
+
+************************1.SELECT-OPTIONS WITH S-S***********************************
+*SELECT-OPTIONS P_ID FOR ZKAPNTDETAIL-PNT_ID .
+
+
+
+*
+*  CASE SY-UCOMM.
+*  	WHEN 'BBB' .
+*      MESSAGE 'THE '.
+*  	WHEN .
+*  	WHEN OTHERS.
+*  ENDCASE.
+
+
+
+
+
+*  IF PID IS INITIAL.
+*    MESSAGE 'THE ID IS NOT ENTERED' TYPE 'E'.
+*   ENDIF.
+*   IF PID IS NOT INITIAL.
+*    MESSAGE 'THE ID IS ENTERED' TYPE 'S'.
+*   ENDIF.
+*  IF PNAME IS INITIAL.
+*    MESSAGE 'SUCCESS' TYPE 'S'.
+*  ENDIF.
+*  IF PNAME IS NOT INITIAL.
+*    MESSAGE 'TYPE THE REQ THING' TYPE 'I'.
+*  ENDIF.
+*IF Pbill IS INITIAL.
+*    MESSAGE 'SUCCESS' TYPE 'S'.
+*  ENDIF.
+*  IF Pbill IS NOT INITIAL.
+*    MESSAGE 'TYPE THE REQ THING' TYPE 'I'.
+*  ENDIF.
